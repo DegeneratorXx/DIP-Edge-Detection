@@ -12,11 +12,7 @@ A Digital Image Processing (DIP) project that implements various edge detection 
   - Laplacian of Gaussian
 - Save or visualize processed output
 
-## 🛠️ Tech Stack
 
-- Python 3.x
-- OpenCV
-- NumPy
 
 ## 📁 Project Structure
 
@@ -40,7 +36,7 @@ DIP-Edge-Detection/
 
 2. **Install dependencies**
    ```bash
-   pip install -r req.txt
+   pip install -r requrement.txt
    ```
 
 3. **Run a script (example: canny.py)**
