@@ -51,5 +51,12 @@ def difference_of_gaussians(image, sigma1=1.0, sigma2=2.0):
 
 def load_image_from_url(url):
     response = requests.get(url)
-    img = Image.open(BytesIO(response.content))
-    return np.array(img)
+    if response.status_code != 200:
+        raise ValueError("Could not retrieve image from the URL.")
+    
+    img = Image.open(BytesIO(response.content)).convert("RGB")
+    img = np.array(img)
+    
+    # Convert RGB to BGR (OpenCV format)
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    return img
